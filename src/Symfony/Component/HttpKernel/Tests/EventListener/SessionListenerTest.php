@@ -31,6 +31,10 @@ use Symfony\Component\HttpKernel\Exception\UnexpectedSessionUsageException;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 
+/**
+ * Tests related to `initialized_session` and `session` can be updated when symfony/http-kernel will stop being
+ * compatible with symfony/framework-bundle<6.0
+ */
 class SessionListenerTest extends TestCase
 {
     public function testOnlyTriggeredOnMainRequest()

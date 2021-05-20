@@ -63,6 +63,7 @@ abstract class AbstractSessionListener implements EventSubscriberInterface
             $request->setSessionFactory(function () use (&$sess) { return $sess ?? $sess = $this->getSession(); });
         }
 
+        // Code related to `initialized_session` can be removed when symfony/http-kernel will stop being compatible with symfony/framework-bundle<6.0
         $session = $this->container && $this->container->has('initialized_session') ? $this->container->get('initialized_session') : null;
         $this->sessionUsageStack[] = $session instanceof Session ? $session->getUsageIndex() : 0;
     }
