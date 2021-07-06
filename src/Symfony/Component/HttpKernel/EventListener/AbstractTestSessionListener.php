@@ -100,7 +100,7 @@ abstract class AbstractTestSessionListener implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            KernelEvents::REQUEST => ['onKernelRequest', 127], // After SessionListener
+            KernelEvents::REQUEST => ['onKernelRequest', 127], // AFTER SessionListener
             KernelEvents::RESPONSE => ['onKernelResponse', -128],
         ];
     }
